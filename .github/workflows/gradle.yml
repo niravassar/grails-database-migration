@@ -37,11 +37,12 @@ jobs:
           GIT_NAME: "Puneet Behl"
           GIT_EMAIL: "behl4485@gmail.com"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TRAVIS_REPO_SLUG: ${{ github.repository }}
         run: |
           echo "***** $GIT_NAME *******"
           echo "***** $GIT_EMAIL *******"
           echo "***** $GH_TOKEN *******"
-          echo "https://${GH_TOKEN}@github.com/asdfkhasdkfhaskdlf.git"
+          echo "https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git"
 #          git config --global user.name "$GIT_NAME"
 #          git config --global user.email "$GIT_EMAIL"
 #          git config --global credential.helper "store --file=~/.git-credentials"
