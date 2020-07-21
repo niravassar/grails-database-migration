@@ -1,6 +1,6 @@
 package testapp
 
-// comment
+// comment another
 class Account {
     String name
     String number

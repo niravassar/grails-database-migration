@@ -2,7 +2,7 @@ name: Clean and Assemble
 on:
   push:
     branches:
-      - guthubactions-experiment
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
