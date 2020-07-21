@@ -36,12 +36,10 @@ jobs:
         env:
           GIT_NAME: "Puneet Behl"
           GIT_EMAIL: "behl4485@gmail.com"
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "***** $GIT_NAME *******"
           echo "***** $GIT_EMAIL *******"
-          echo "***** $GH_TOKEN *******"
-          echo "***** $GH_TOKEN *******"
           echo "***** $GH_TOKEN *******"
           echo "https://${GH_TOKEN}@github.com/asdfkhasdkfhaskdlf.git"
 #          git config --global user.name "$GIT_NAME"
