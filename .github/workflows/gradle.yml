@@ -28,5 +28,7 @@ jobs:
           rm -rf build
           rm -rf *.zip
           ./gradlew clean test integrationTest assemble
-      - name: Clean, Test, Assemble
+      - name: Publish
         run: ./gradlew publish
+      - name: Docs
+        run: ./gradlew docs
