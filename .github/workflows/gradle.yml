@@ -44,4 +44,4 @@ jobs:
           mkdir -p snapshot
           cp -r ../build/docs/. ./snapshot/
           git add snapshot/*
-          ls snapshots -al
+          ls snapshot -al
