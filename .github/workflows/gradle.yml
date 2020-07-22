@@ -28,7 +28,7 @@ jobs:
         run: ./gradlew publish_stub
       - name: Docs
         run: ./gradlew docs
-      - name: Github Credentials and Github Pages
+      - name: Github Pages
         env:
           GIT_NAME: "Puneet Behl"
           GIT_EMAIL: "behl4485@gmail.com"
@@ -44,4 +44,8 @@ jobs:
           mkdir -p snapshot
           cp -r ../build/docs/. ./snapshot/
           git add snapshot/*
-          ls snapshot -al
+          git commit -a -m "Updating docs"
+          # DONT RUN git push origin HEAD
+          cd ..
+          rm -rf gh-pages
+          ls -al
