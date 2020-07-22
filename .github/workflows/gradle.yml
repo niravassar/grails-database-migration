@@ -41,3 +41,5 @@ jobs:
           echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
           git clone https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git -b gh-pages gh-pages --single-branch > /dev/null
           ls -al
+          cd gh-pages
+          ls -al
