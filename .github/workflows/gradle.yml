@@ -37,5 +37,3 @@ jobs:
         run: |
           ./gh-pages-clone.sh
           ./gh-pages-snapshot-docs.sh
-          ls -al
-          ls snapshot -al
