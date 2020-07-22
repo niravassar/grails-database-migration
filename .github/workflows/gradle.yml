@@ -34,4 +34,8 @@ jobs:
           GIT_EMAIL: "behl4485@gmail.com"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_REPO_SLUG: ${{ github.repository }}
-        run: ./gh-pages-script.sh
+        run: |
+          ./gh-pages-clone.sh
+          ./gh-pages-snapshot-docs.sh
+          ls -al
+          ls snapshot -al
