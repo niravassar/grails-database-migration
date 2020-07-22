@@ -23,16 +23,12 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Clean, Test, Assemble
-        run: |
-          set -e
-          rm -rf build
-          rm -rf *.zip
-          ./gradlew clean test integrationTest assemble
+        run: ./gradlew clean test integrationTest assemble
       - name: Publish
         run: ./gradlew publish_stub
       - name: Docs
         run: ./gradlew docs
-      - name: Github Credentials
+      - name: Github Credentials and Github Pages
         env:
           GIT_NAME: "Puneet Behl"
           GIT_EMAIL: "behl4485@gmail.com"
@@ -43,7 +39,5 @@ jobs:
           git config --global user.email "$GIT_EMAIL"
           git config --global credential.helper "store --file=~/.git-credentials"
           echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
-      - name: Github Pages
-        run: |
           git clone https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git -b gh-pages gh-pages --single-branch > /dev/null
           ls -al
