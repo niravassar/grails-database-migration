@@ -48,4 +48,3 @@ jobs:
           # DONT RUN git push origin HEAD
           cd ..
           rm -rf gh-pages
-          ls -al
