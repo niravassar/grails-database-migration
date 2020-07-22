@@ -39,8 +39,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TRAVIS_REPO_SLUG: ${{ github.repository }}
         run: |
-          git config --global user.name $GIT_NAME
-          git config --global user.email $GIT_EMAIL
+          git config --global user.name "$GIT_NAME"
+          git config --global user.email "$GIT_EMAIL"
           git config --global credential.helper "store --file=~/.git-credentials"
-          echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
-          cat ~./git-credentials
+          echo "https://$GH_TOKEN:@github.com" > .git-credentials
+          cat .git-credentials
