@@ -1,7 +1,7 @@
 package testapp
 
 // comment another
-// dfkjhsadfasdfklsadf
+// NOTHING
 class Account {
     String name
     String number

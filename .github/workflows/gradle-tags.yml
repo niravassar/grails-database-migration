@@ -1,0 +1,39 @@
+name: Gradle Tag
+on:
+  push:
+    tags:
+      - v*
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: ['1.8']
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/cache@v1
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+      - name: Clean, Test, Assemble
+        run: ./gradlew clean test integrationTest assemble
+      - name: Bintray Upload
+        run: ./gradlew bintrayUpload_stub
+      - name: Docs
+        run: ./gradlew docs
+      - name: Github Pages
+        env:
+          GIT_NAME: "Puneet Behl"
+          GIT_EMAIL: "behl4485@gmail.com"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_REPO_SLUG: ${{ github.repository }}
+          GH_TAG: ${{ env.GITHUB_TAG }}
+        run: |
+          ./gh-pages-clone.sh
+          ./gh-pages-latest-docs.sh
