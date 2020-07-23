@@ -23,7 +23,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Clean, Test, Assemble
         run: ./gradlew clean test integrationTest assemble
-      - name: Publish
+      - name: Bintray Upload
         run: ./gradlew bintrayUpload_stub
       - name: Docs
         run: ./gradlew docs
