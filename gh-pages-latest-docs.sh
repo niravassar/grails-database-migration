@@ -16,4 +16,4 @@ cp -r ../build/docs/. "./$majorVersion/"
 git add "$majorVersion/*"
 ls -al
 
-echo "************* $GH_TAG *******"
+echo "************* $GITHUB_REF *******"
