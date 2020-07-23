@@ -33,6 +33,7 @@ jobs:
           GIT_EMAIL: "behl4485@gmail.com"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_REPO_SLUG: ${{ github.repository }}
+          GH_TAG: ${{ env.GITHUB_TAG }}
         run: |
           ./gh-pages-clone.sh
           ./gh-pages-latest-docs.sh
