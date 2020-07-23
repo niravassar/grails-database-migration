@@ -15,4 +15,3 @@ git rm -rf "$majorVersion"
 mkdir -p "$majorVersion"
 cp -r ../build/docs/. "./$majorVersion/"
 git add "$majorVersion/*"
-ls -al
