@@ -1,4 +1,4 @@
-name: Gradle Tasks
+name: Gradle Master
 on:
   push:
     branches:

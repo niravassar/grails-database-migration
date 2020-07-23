@@ -1,6 +1,4 @@
-name: Gradle Tasks
-
-
+name: Gradle Tag
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,6 +20,16 @@ jobs:
       - name: Clean, Test, Assemble
         run: ./gradlew clean test integrationTest assemble
       - name: Publish
-        run: ./gradlew publish_stub
+        run: ./gradlew bintrayUpload_stub
       - name: Docs
         run: ./gradlew docs
+      - name: Github Pages
+        env:
+          GIT_NAME: "Puneet Behl"
+          GIT_EMAIL: "behl4485@gmail.com"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_REPO_SLUG: ${{ github.repository }}
+        run: |
+          ./gh-pages-clone.sh
+          ./gh-pages-latest-docs.sh
+
