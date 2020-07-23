@@ -3,7 +3,7 @@ git rm -rf latest/
 mkdir -p latest
 cp -r ../build/docs/. ./latest/
 git add latest/*
-version="8.1.1" # eg: v3.0.1
+version="v8.1.1" # eg: v3.0.1
 version=${version:1} # 3.0.1
 majorVersion=${version:0:4} # 3.0.
 majorVersion="${majorVersion}x" # 3.0.x
