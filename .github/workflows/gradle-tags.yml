@@ -36,4 +36,3 @@ jobs:
         run: |
           ./gh-pages-clone.sh
           ./gh-pages-latest-docs.sh
-
