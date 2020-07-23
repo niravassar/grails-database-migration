@@ -1,8 +1,6 @@
 name: Gradle Tasks
-on:
-  push:
-    tags:
-      - v*
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
