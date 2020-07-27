@@ -24,7 +24,11 @@ jobs:
       - name: Clean, Test, Assemble
         run: ./gradlew clean test integrationTest assemble
       - name: Publish
-        run: ./gradlew publish_stub
+        env:
+          GRAILS_CENTRAL_USERNAME: ${{ secrets.GRAILS_CENTRAL_USERNAME }}
+        run: |
+          ./gradlew publish_stub
+          echo "********* $GRAILS_CENTRAL_USERNAME ********* "
       - name: Docs
         run: ./gradlew docs
       - name: Github Pages
