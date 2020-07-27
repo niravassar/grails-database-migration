@@ -24,6 +24,9 @@ jobs:
       - name: Clean, Test, Assemble
         run: ./gradlew clean test integrationTest assemble
       - name: Bintray Upload
+        env:
+          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
+          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
         run: ./gradlew bintrayUpload_stub
       - name: Docs
         run: ./gradlew docs
