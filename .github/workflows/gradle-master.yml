@@ -26,9 +26,8 @@ jobs:
       - name: Publish
         env:
           GRAILS_CENTRAL_USERNAME: ${{ secrets.GRAILS_CENTRAL_USERNAME }}
-        run: |
-          ./gradlew publish_stub
-          echo "********* $GRAILS_CENTRAL_USERNAME ********* "
+          GRAILS_CENTRAL_PASSWORD: ${{ secrets.GRAILS_CENTRAL_PASSWORD }}
+        run: ./gradlew publish_stub
       - name: Docs
         run: ./gradlew docs
       - name: Github Pages
